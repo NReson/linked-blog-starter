@@ -99,7 +99,7 @@ export function updateMarkdownLinks(markdown: string, currSlug: string) {
     const fileSlugAbs = decodeURI(path.join(mdDir, m2))
     if (fs.existsSync(fileSlugRel)) {
       const imgPath = path.join(relAssetDir, relLink);
-      return `${m1}/${imgPath}${m3}`
+      return `${m1}/md_assets/${imgPath}${m3}`
     } else if (fs.existsSync(fileSlugAbs)) {
       const imgPath = path.join(relAssetDir, m2);
       return `${m1}/${imgPath}${m3}`
