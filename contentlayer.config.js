@@ -5,23 +5,17 @@ import remarkImages from 'remark-images'
 export const Post = defineDocumentType(() => ({
   name: 'Post',
   filePathPattern: `**/*.md`,
+  contentType: 'markdown',
   fields: {
     title: { type: 'string', required: true },
-    date: { type: 'date', required: true },
-  },
-  computedFields: {
-    url: {
-      type: 'string',
-      resolve: (doc) => `/${doc._raw.flattenedPath}`,
-    },
+    // другие поля
   },
 }))
 
-export default {
+export default makeSource({
+  contentDirPath: 'content', // путь к md
+  documentTypes: [Post],
   markdown: {
-    remarkPlugins: [
-      remarkGfm,
-      remarkImages
-    ]
-  }
-}
+    remarkPlugins: [remarkGfm, remarkImages],
+  },
+})
