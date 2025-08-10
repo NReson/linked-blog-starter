@@ -4,12 +4,7 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     unoptimized: true
-  }
-};
-
-export default withContentlayer(nextConfig);
-
-module.exports = {
+  },
   async redirects() {
     return [
       {
@@ -17,6 +12,8 @@ module.exports = {
         destination: '/home',
         permanent: true,
       },
-    ]
+    ];
   },
-}
+};
+
+export default withContentlayer(nextConfig);
