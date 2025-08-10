@@ -70,7 +70,7 @@ function Search({ visible, setVisible }) {
 
         {/* Search Bar */}
         <div className="w-full">
-          <label className="block text-sm sr-only" htmlFor="search">Search</label>
+          <label className="block text-sm sr-only" htmlFor="search">Поиск</label>
           <div className="relative flex items-center">
             <input ref={inputRef} id="search" type="search" className="form-input w-full text-gray-800 px-3 py-2 pl-10" placeholder="Search my notes" onChange={handleChangeInput}/>
             <button type="submit" className="absolute inset-0 right-auto" aria-label="Search">
