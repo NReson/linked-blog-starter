@@ -17,9 +17,6 @@ export const Post = defineDocumentType(() => ({
   },
 }))
 
-import remarkGfm from 'remark-gfm';
-import remarkImages from 'remark-images';
-
 export default {
   markdown: {
     remarkPlugins: [
