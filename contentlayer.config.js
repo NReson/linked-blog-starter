@@ -17,8 +17,14 @@ export const Post = defineDocumentType(() => ({
   },
 }))
 
-export default makeSource({
-  contentDirPath: 'content', // папка с твоими md-файлами
-  documentTypes: [Post],
-  markdown: { remarkPlugins: [remarkGfm, remarkImages] },
-})
+import remarkGfm from 'remark-gfm';
+import remarkImages from 'remark-images';
+
+export default {
+  markdown: {
+    remarkPlugins: [
+      remarkGfm,
+      remarkImages
+    ]
+  }
+}
